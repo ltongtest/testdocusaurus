@@ -73,7 +73,7 @@ test-docker:
             --env INPUT_MILLISECONDS="${{ env.INPUT_MILLISECONDS }}" \
             --rm ${{ env.TEST_TAG }}
 
- test-action:
+test-action:
     name: GitHub Actions Test
     runs-on: [self-hosted, Linux, X64]
 
