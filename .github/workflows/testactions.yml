@@ -30,9 +30,9 @@ jobs:
         id: npm-ci
         run: npm ci
 
-test-docker:
+  test-docker:
     name: Docker Tests
-    runs-on: [self-hosted, Linux, X64]
+    runs-on: ubuntu-latest
 
     # Run a local registry to push to
     services:
@@ -73,9 +73,9 @@ test-docker:
             --env INPUT_MILLISECONDS="${{ env.INPUT_MILLISECONDS }}" \
             --rm ${{ env.TEST_TAG }}
 
-test-action:
+  test-action:
     name: GitHub Actions Test
-    runs-on: [self-hosted, Linux, X64]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
