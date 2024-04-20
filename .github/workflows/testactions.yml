@@ -32,17 +32,10 @@ jobs:
 
   test-docker:
     name: Docker Tests
-    runs-on: ubuntu-latest
-
-    # Run a local registry to push to
-    services:
-      registry:
-        image: registry:2
-        ports:
-          - 5001:5000
+    runs-on: [self-hosted, Linux, X64]
 
     env:
-      TEST_TAG: localhost:5001/actions/container-toolkit-action:latest
+      TEST_TAG: ltong/docusaurus:t01
 
     steps:
       - name: Checkout
@@ -75,7 +68,7 @@ jobs:
 
   test-action:
     name: GitHub Actions Test
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64]
 
     steps:
       - name: Checkout
